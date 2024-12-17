@@ -90,10 +90,10 @@ class GameManager {
     loadAll(level) {
         switch (level) {
             case 1:
-                mapManager.loadMap('../../assets/map1.tmj');
+                mapManager.loadMap(new URL('../../assets/map1.tmj', import.meta.url));
                 break;
             case 2:
-                mapManager.loadMap('../../assets/map2.tmj');
+                mapManager.loadMap(new URL('../../assets/map2.tmj', import.meta.url));
         }
 
         spriteManager.loadAtlas({
@@ -116,8 +116,8 @@ class GameManager {
         gameManager.factory['Bullet'] = Bullet;
         gameManager.factory['Exit'] = Exit;
 
-        soundManager.loadArray(['../assets/sound/fireball.mp3', '../assets/sound/arrow.mp3', '../assets/sound/shield.mp3', '../assets/sound/ult.mp3', '../assets/sound/potion.mp3', '../assets/sound/coin.mp3', '../assets/sound/ambient.mp3', '../assets/sound/empty.mp3']);
-        soundManager.play('../assets/sound/ambient.mp3', {looping: true});
+        soundManager.loadArray([new URL('../../assets/sound/fireball.mp3', import.meta.url),new URL('../../assets/sound/arrow.mp3', import.meta.url),new URL('../../assets/sound/shield.mp3', import.meta.url),new URL('../../assets/sound/ult.mp3', import.meta.url),new URL('../../assets/sound/potion.mp3', import.meta.url),new URL('../../assets/sound/coin.mp3', import.meta.url),new URL('../../assets/sound/ambient.mp3', import.meta.url),new URL('../../assets/sound/empty.mp3', import.meta.url)])
+        soundManager.play(new URL('../../assets/sound/ambient.mp3', import.meta.url), {looping: true});
 
         eventsManager.setup(canvas);
 

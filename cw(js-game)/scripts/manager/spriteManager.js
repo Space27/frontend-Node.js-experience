@@ -18,13 +18,13 @@ class SpriteManager {
 
             request.onreadystatechange = () => {
                 if (request.readyState === 4 && request.status === 200) {
-                    this.parseAtlas(request.responseText, atlasImg);
+                    this.parseAtlas(request.responseText, new URL(atlasImg, import.meta.url));
                 }
             };
 
-            request.open("GET", atlasJson, true);
+            request.open("GET", new URL(atlasJson, import.meta.url), true);
             request.send();
-            this.loadImg(atlasImg);
+            this.loadImg(new URL(atlasImg, import.meta.url));
         }
     }
 

@@ -56,15 +56,15 @@ export class Player extends Entity {
 
     onTouchEntity(obj) {
         if (obj.name.startsWith('Score')) {
-            soundManager.play('../assets/sound/coin.mp3');
+            soundManager.play(new URL('../../assets/sound/coin.mp3', import.meta.url));
             this.score += 50;
             obj.kill();
         } else if (obj.name.startsWith('Health')) {
-            soundManager.play('../assets/sound/potion.mp3');
+            soundManager.play(new URL('../../assets/sound/potion.mp3', import.meta.url));
             this.life = Math.min(this.life + 50, this.maxLife);
             obj.kill();
         } else if (obj.name.startsWith('Mana')) {
-            soundManager.play('../assets/sound/potion.mp3');
+            soundManager.play(new URL('../../assets/sound/potion.mp3', import.meta.url));
             this.mana = Math.min(this.mana + 50, this.maxMana);
             obj.kill();
         } else if (obj.name.startsWith('Exit')) {
@@ -81,7 +81,7 @@ export class Player extends Entity {
 
     fire() {
         if (this.mana >= 25) {
-            soundManager.play('../assets/sound/fireball.mp3');
+            soundManager.play(new URL('../../assets/sound/fireball.mp3', import.meta.url));
             this.mana -= 25;
 
             let fireball = new Bullet(this.direction, 'fireball');
@@ -107,13 +107,13 @@ export class Player extends Entity {
 
             gameManager.addEntity(fireball);
         } else {
-            soundManager.play('../assets/sound/empty.mp3');
+            soundManager.play(new URL('../../assets/sound/empty.mp3', import.meta.url));
         }
     }
 
     ult() {
         if (this.mana >= 100) {
-            soundManager.play('../assets/sound/ult.mp3', {volume: 0.4});
+            soundManager.play(new URL('../../assets/sound/ult.mp3', import.meta.url), {volume: 0.4});
 
             this.mana -= 100;
             let magnet = new Bullet(this.direction, 'magnet');
@@ -140,7 +140,7 @@ export class Player extends Entity {
             magnet.init();
             gameManager.addEntity(magnet);
         } else {
-            soundManager.play('../assets/sound/empty.mp3');
+            soundManager.play(new URL('../../assets/sound/empty.mp3', import.meta.url));
         }
     }
 
@@ -152,7 +152,7 @@ export class Player extends Entity {
 
             setTimeout(() => this.shieldUp = false, 5000);
         } else if (!this.shieldUp) {
-            soundManager.play('../assets/sound/empty.mp3');
+            soundManager.play(new URL('../../assets/sound/empty.mp3', import.meta.url));
         }
     }
 }

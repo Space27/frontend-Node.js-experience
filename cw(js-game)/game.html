@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Маг: Отрочество</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96"/>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg"/>
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico"/>
+    <meta charset="UTF-8">
+    <meta name="description" content="Курсовая работа по Web-технологиям">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Web, CW, Game, Magic">
+    <meta name="author" content="Даниил Локосов">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" defer src="scripts/index.js"></script>
+</head>
+<body>
+<main class="page">
+    <section class="container">
+        <div class="player-info">
+            <p id="username" class="player-info__value">Player: undefined</p>
+            <p id="health" class="player-info__value">Health: 0</p>
+            <p id="mana" class="player-info__value">Mana: 0</p>
+            <p id="score" class="player-info__value">Score: 0</p>
+            <p id="shield" class="player-info__value">Shield: 0</p>
+        </div>
+
+        <canvas class="canvas-field" id="canvas" width="384" height="288"></canvas>
+
+        <div class="leaderboard-field">
+            <div>
+                <h2 class="leaderboard-field__title" id="leaderboard-title">Leaderboard</h2>
+                <ol id="leaderboard" class="leaderboard-field__list"></ol>
+            </div>
+            <a id="home" href="index.html" class="leaderboard-field__home">Home</a>
+        </div>
+    </section>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const GLOBAL_DELAY = 40;
+        const FPS = Math.floor(1000 / GLOBAL_DELAY);
+    </script>
+</main>
+</body>
+</html>

@@ -123,7 +123,7 @@ export class Enemy extends Entity {
             }
 
             gameManager.addEntity(arrow);
-            soundManager.playWorldSound('../assets/sound/arrow.mp3', this.pos_x, this.pos_y);
+            soundManager.playWorldSound(new URL('../../assets/sound/arrow.mp3', import.meta.url), this.pos_x, this.pos_y);
 
             setTimeout(() => this.isFire = false, 2000);
         }

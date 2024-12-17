@@ -82,7 +82,7 @@ export class Bullet extends Entity {
             if (!obj.shieldUp)
                 obj.kill();
             else
-                soundManager.play('../assets/sound/shield.mp3');
+                soundManager.play(new URL('../../assets/sound/shield.mp3', import.meta.url));
             this.kill();
         }
     }
