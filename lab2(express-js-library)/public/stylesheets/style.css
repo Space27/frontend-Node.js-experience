@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.page {
+    font-family: "Rubik", sans-serif;
+    font-weight: normal;
+    background-color: #FBF8EC;
+}
+
+.header {
+    height: 80px;
+    background-color: white;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+}
+
+.header__container {
+    margin: 0 auto;
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    max-width: 170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo__img {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.logo__title {
+    font-size: 20px;
+    line-height: 1.5;
+    color: black;
+}
+
+.header__button {
+    display: block;
+    width: 200px;
+    height: 40px;
+    background-color: #70C05B;
+    border-radius: 5%;
+    border: 0;
+    font-size: 16px;
+    color: white;
+}
+
+.header__button:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.main {
+    width: 85%;
+    margin-left: 90px;
+    padding-top: 75px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.filter {
+    height: 370px;
+    width: 270px;
+    margin-right: 40px;
+}
+
+.filter__form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.filter__title {
+    display: flex;
+    align-items: center;
+    background-color: #F3F2F1;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    height: 45px;
+    text-align: left;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.filter__item {
+    min-height: 25px;
+}
+
+.filter__label {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.filter__item > input {
+    width: 40px;
+}
+
+.filter__date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter__date > input {
+    width: 100%;
+    height: 40px;
+}
+
+.filter__date > .filter__label {
+    margin-bottom: 10px;
+}
+
+.filter__button {
+    padding: 0 30px;
+    display: block;
+    height: 40px;
+    background-color: #FF6633;
+    border-radius: 5%;
+    border: 0;
+    font-size: 16px;
+    color: white;
+}
+
+.filter__button:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.list {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 40px;
+    list-style: none;
+    padding: 0;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 8px;
+    box-sizing: border-box;
+    width: 263px;
+    height: 350px;
+    background-color: white;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.book__img {
+    height: 235px;
+    max-width: 90%;
+    object-fit: contain;
+}
+
+.book__title {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: normal;
+    margin: 0;
+    align-self: flex-start;
+}
+
+.book__author {
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0;
+    align-self: flex-start;
+}
+
+.book__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    border-radius: 5%;
+    border: 1px solid #70C05B;
+    font-size: 16px;
+    color: #70C05B;
+}
+
+.book__button_disabled {
+    color: #BFBFBF;
+}
+
+.book__delete {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-color: #F3F2F1;
+    border: 0;
+    border-radius: 25%;
+    right: 8px;
+    top: 8px;
+}
+
+.book__delete:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.book-main {
+    margin-left: 150px;
+    padding-top: 75px;
+}
+
+.book-card__title {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.book-card__container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 900px;
+    min-height: 496px;
+    align-content: space-between;
+    margin-left: 30px;
+    row-gap: 40px;
+}
+
+.book-card__img {
+    max-height: 496px;
+    margin-right: 120px;
+    max-width: 400px;
+}
+
+.book-card__info-container {
+    width: 310px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
+
+.book-card__button {
+    padding: 0 30px;
+    display: block;
+    width: 100%;
+    height: 60px;
+    background-color: #FF6633;
+    border-radius: 5%;
+    border: 0;
+    font-size: 22px;
+    line-height: 1.5;
+    color: white;
+}
+
+.book-card__button_disabled {
+    color: #BFBFBF;
+}
+
+.book-card__button:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.book-card__info-cell {
+    font-size: 12px;
+    line-height: 1.5;
+    width: 50%;
+}
+
+.book-card__info-cell-value {
+    font-weight: bold;
+}
+
+.book-card__info-row {
+    height: 26px;
+}
+
+.book-card__info-row:nth-child(odd) {
+    background-color: #F3F2F1;
+}
+
+.book-card__return-button {
+    width: 175px;
+    display: block;
+    font-size: 22px;
+    line-height: 1.5;
+    background-color: #70C05B;
+    color: white;
+    border-radius: 5%;
+    border: 0;
+    height: 60px;
+}
+
+.book-card__return-button:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.dialog {
+    border: 0;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    width: 20%;
+}
+
+.dialog__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.dialog__form-cell {
+    height: 30px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.dialog__form-button {
+    padding: 0 30px;
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-color: #FF6633;
+    border-radius: 5%;
+    border: 0;
+    font-size: 22px;
+    line-height: 1.5;
+    color: white;
+}
+
+.dialog__form-button:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.dialog__form-input-file {
+    display: none;
+}
+
+.dialog__form-label {
+    height: 35px;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #70C05B;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    line-height: 1.5;
+    color: white;
+}
+
+.dialog__form-label:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}

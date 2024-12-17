@@ -1,0 +1,44 @@
+extends layout
+
+block content
+    header(class='header')
+        div(class='header__container')
+            a(class='logo' href='/')
+                img(src='/images/logo.png' class='logo__img')
+                h1(class='logo__title')=title
+            button(class='header__button' id='insert-button')= 'Добавить книгу'
+    main(class='main')
+        section(class='filter')
+            form(method='dialog', class='filter__form', id='filter-form')
+                h2(class='filter__title')='Фильтр'
+                div(class='filter__item filter__date')
+                    label(class='filter__label' for='date')='Дата возврата'
+                    input(type='date' id='date' name='date')
+                div(class='filter__item')
+                    input(type='checkbox' id='available' name='available')
+                    label(class='filter__label', for='available')='В наличии'
+                div(class='filter__item')
+                    input(type='checkbox' id='expired' name='expired')
+                    label(class='filter__label', for='expired')='Возврат просрочен'
+                button(class='filter__button', id='filter-button')='Применить'
+
+        ul(class='list')
+            each book in books
+                li(class='book')
+                    img(src='/images/' + book.img, class='book__img', alt=book.title)
+                    button(class='fa-regular fa-trash-can book__delete', id=book.num)
+                    h3(class='book__title')=book.title
+                    p(class='book__author')=book.author
+                    a(class='book__button' + (book.available ? '' : ' book__button_disabled'), href='/books/' + book.num)=book.available ? 'Взять' : 'Нет в наличии'
+
+    dialog(class='dialog', id='insert-dialog')
+        form(class='dialog__form', method='dialog', enctype='multipart/form-data', id='insert-dialog-form')
+            label(class='dialog__form-label', for='dialog__form-input-file')='Загрузить обложку'
+                input(class='dialog__form-cell dialog__form-input-file', type='file', name='image', accept='image/*', id='dialog__form-input-file')
+            input(class='dialog__form-cell', name='title', placeholder='Название', required=true)
+            input(class='dialog__form-cell', name='author', placeholder='Автор', required=true)
+            input(class='dialog__form-cell', type='number', name='year', placeholder='Год написания')
+            input(class='dialog__form-cell', name='genre', placeholder='Жанр')
+            input(class='dialog__form-cell dialog__form-button', type='submit' id='insert-dialog__submit')
+
+    script(src='/javascripts/index.js')

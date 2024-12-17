@@ -1,0 +1,47 @@
+<header-component subtitle="РЕГИСТРАЦИЯ"></header-component>
+<main class="main">
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        type="email"
+        placeholder="pat@example.com"
+        formControlName="email"
+        (blur)="updateErrorMessage()"
+        required
+      />
+      @if (registerForm.get('email')?.invalid) {
+        <mat-error>{{ errorMessage() }}</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Имя</mat-label>
+      <input
+        matInput
+        placeholder="Иван Иванов"
+        formControlName="name"
+        required
+      />
+      @if (registerForm.get('name')?.invalid) {
+        <mat-error>Заполните поле</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Дата рождения</mat-label>
+      <input matInput
+             [matDatepicker]="picker"
+             [max]="maxDate"
+             placeholder="ММ/ДД/ГГГГ"
+             formControlName="birth"
+             required
+      />
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      @if (registerForm.get('birth')?.invalid) {
+        <mat-error>Заполните поле</mat-error>
+      }
+    </mat-form-field>
+    <button type="submit" mat-raised-button [disabled]="registerForm.invalid">Зарегистрироваться</button>
+  </form>
+</main>

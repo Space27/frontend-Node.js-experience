@@ -1,0 +1,77 @@
+[
+  {
+    "num": 1,
+    "title": "Преступление и Наказание",
+    "author": "Достоевский Ф.М.",
+    "img": "1.jpg",
+    "available": true,
+    "year": 1866,
+    "genre": "Роман"
+  },
+  {
+    "num": 2,
+    "title": "Мастер и Маргарита",
+    "author": "Булгаков М.А.",
+    "img": "2.jpg",
+    "available": false,
+    "year": 1966,
+    "genre": "Роман",
+    "client": "Иванов И.И.",
+    "return_date": "2024-10-14"
+  },
+  {
+    "num": 3,
+    "title": "Две Крепости",
+    "author": "Толкин Дж. Р. Р.",
+    "img": "3.jpg",
+    "available": true,
+    "year": 1954
+  },
+  {
+    "num": 4,
+    "title": "Ведьмак. Последнее желание",
+    "author": "Сапковский Анджей",
+    "img": "4.jpg",
+    "available": true,
+    "year": 1993,
+    "genre": "Фэнтези"
+  },
+  {
+    "num": 5,
+    "title": "Дети капитана Гранта",
+    "author": "Верн Жюль",
+    "img": "5.jpg",
+    "available": true,
+    "year": 1867,
+    "genre": "Роман"
+  },
+  {
+    "num": 6,
+    "title": "Дон Кихот",
+    "author": "Сервантес М. де С.",
+    "img": "6.jpg",
+    "available": true,
+    "year": 1605,
+    "genre": "Роман"
+  },
+  {
+    "num": 7,
+    "title": "Язык программирования C",
+    "author": "Ритчи Деннис М., Керниган Брайан У.",
+    "img": "7.jpg",
+    "available": false,
+    "year": 1978,
+    "genre": "Учебник",
+    "client": "Клавожимов А.М.",
+    "return_date": "2020-10-10"
+  },
+  {
+    "num": 8,
+    "title": "Капитанская дочка",
+    "author": "Пушкин А.С.",
+    "img": "8.jpg",
+    "available": true,
+    "year": 1836,
+    "genre": "Роман"
+  }
+]

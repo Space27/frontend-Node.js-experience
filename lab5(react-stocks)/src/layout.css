@@ -1,0 +1,39 @@
+.header {
+    background-color: #FFF;
+    height: 80px;
+    padding: 0 5%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    height: 100%;
+    max-width: 300px;
+    padding: 5px 0;
+    box-sizing: border-box;
+    transition: transform .2s ease-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo:hover {
+    transform: scale(1.01);
+}
+
+.header .logo .logo__image {
+    height: 100%;
+    border-radius: 40%;
+    transition: transform .4s ease-in;
+}
+
+.header .logo .logo__title {
+    margin: 0;
+    font-family: 'Rubik', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: bold;
+    color: #000;
+}

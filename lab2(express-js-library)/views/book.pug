@@ -1,0 +1,58 @@
+extends layout
+
+block content
+    header(class='header')
+        div(class='header__container')
+            a(class='logo' href='/')
+                img(src='/images/logo.png' class='logo__img')
+                h1(class='logo__title')=title
+            button(class='header__button', id='edit-button')= 'Редактировать книгу'
+    main(class='book-main')
+        section(class='book-card')
+            h2(class='book-card__title')=book.title
+            section(class='book-card__container')
+                img(class='book-card__img', src='/images/' + book.img, alt=book.title)
+                section(class='book-card__info-container')
+                    button(class='book-card__button' + (book.available ? '' : ' book-card__button_disabled'), id='bring-button')=book.available ? 'Взять' : 'Нет в наличии'
+                    table(class='book-card__info')
+                        tbody
+                            if book.author
+                                tr(class='book-card__info-row')
+                                    td(class='book-card__info-cell')='Автор'
+                                    td(class='book-card__info-cell book-card__info-cell-value')=book.author
+                            if book.year
+                                tr(class='book-card__info-row')
+                                    td(class='book-card__info-cell')='Год написания'
+                                    td(class='book-card__info-cell book-card__info-cell-value')=book.year
+                            if book.genre
+                                tr(class='book-card__info-row')
+                                    td(class='book-card__info-cell')='Жанр'
+                                    td(class='book-card__info-cell book-card__info-cell-value')=book.genre
+                    if !book.available
+                        table(class='book-card__info')
+                            tbody
+                                tr(class='book-card__info-row')
+                                    td(class='book-card__info-cell')='Забрал'
+                                    td(class='book-card__info-cell book-card__info-cell-value')=book.client
+                                tr(class='book-card__info-row')
+                                    td(class='book-card__info-cell')='Дата возврата'
+                                    td(class='book-card__info-cell book-card__info-cell-value')=book.return_date
+                        button(class='book-card__return-button', id='return-button')='Вернуть '
+                            i(class='fa-solid fa-chevron-right')
+
+    dialog(class='dialog', id='edit-dialog')
+        form(class='dialog__form', method='dialog', enctype='multipart/form-data', id='edit-dialog-form')
+            label(class='dialog__form-label', for='dialog__form-input-file')='Загрузить обложку'
+                input(class='dialog__form-cell dialog__form-input-file', type='file', name='image', accept='image/*', id='dialog__form-input-file')
+            input(class='dialog__form-cell', name='title', placeholder='Название', value=book.title)
+            input(class='dialog__form-cell', name='author', placeholder='Автор', value=book.author)
+            input(class='dialog__form-cell', type='number', name='year', placeholder='Год написания')
+            input(class='dialog__form-cell', name='genre', placeholder='Жанр')
+            input(class='dialog__form-cell dialog__form-button', type='submit', id='edit-dialog__submit')
+    dialog(class='dialog', id='bring-dialog')
+        form(class='dialog__form', method='dialog', id='bring-dialog-form')
+            input(type='hidden', name='available', value='false')
+            input(class='dialog__form-cell', name='client', placeholder='Ваше имя', required=true)
+            input(class='dialog__form-cell dialog__form-button', type='submit', id='bring-dialog__submit')
+
+    script(src='/javascripts/book.js', data-id=book.num)

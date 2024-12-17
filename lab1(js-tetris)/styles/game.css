@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', Georgia, cursive;
+    line-height: 25px;
+    color: khaki;
+    background-color: darksalmon;
+}
+
+header {
+    text-align: center;
+}
+
+section {
+    display: block;
+}
+
+.info {
+    width: 500px;
+    float: left;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.figure-field {
+    display: block;
+    width: 128px;
+    height: 128px;
+    border: cadetblue solid 2px;
+    margin-left: 100px;
+    background-color: black;
+}
+
+.game {
+    width: 400px;
+    margin: 0 auto;
+    float: left;
+}
+
+.game-field {
+    display: block;
+    border: cadetblue solid 2px;
+    width: 320px;
+    height: 640px;
+    margin: 0 auto;
+    background-color: black;
+}
+
+.leaderboard {
+    text-align: center;
+    width: 300px;
+    height: 500px;
+    float: right;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+
+.leaderboard > div {
+    height: 450px;
+}
+
+a, a:link, a:visited, a:hover  {
+    text-decoration: none;
+}
+
+.leaderboard > a {
+    margin: 0 auto;
+    background-color: coral;
+    border: 2px dotted crimson;
+    color: khaki;
+    text-align: center;
+    height: 50px;
+    width: 150px;
+    display: block;
+}

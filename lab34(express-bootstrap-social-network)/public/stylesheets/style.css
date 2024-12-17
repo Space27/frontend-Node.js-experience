@@ -1,0 +1,225 @@
+@font-face {
+    font-family: 'Rubik';
+    src: url('fonts/Rubik/Rubik-VariableFont_wght.ttf') format('truetype');
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('fonts/Rubik/Rubik-Italic-VariableFont_wght.ttf') format('truetype');
+    font-style: italic
+}
+
+a {
+    text-decoration: none
+}
+
+.page {
+    font-family: 'Rubik', serif;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 2px;
+    background-color: rgba(212, 245, 248, 0.3)
+}
+
+.header {
+    background-color: #FFF;
+    height: 72px;
+    padding: 0 5%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25)
+}
+
+.header .logo {
+    height: 100%;
+    max-width: 220px;
+    transition: transform .2s ease-out
+}
+
+.header .logo:hover {
+    transform: scale(1.01)
+}
+
+.header .logo .logo__image {
+    height: 100%;
+    transition: transform .4s ease-in
+}
+
+.header .logo .logo__title {
+    font-family: 'Rubik', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: bold;
+    color: #000
+}
+
+.header .logo:hover {
+    opacity: .7;
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.25)
+}
+
+.header .logo:hover .logo__image {
+    transform: rotate(180deg)
+}
+
+.header .subtitle {
+    font-family: 'Rubik', serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: normal;
+    color: #000
+}
+
+.user-container {
+    max-width: 700px;
+    list-style: none
+}
+
+.user {
+    background-color: #FFF;
+    border-radius: 15px;
+    box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.25);
+    column-gap: 25px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    height: 150px
+}
+
+.user__image {
+    width: 130px;
+    min-width: 130px;
+    height: 130px;
+    object-fit: cover;
+    transition: transform .2s ease-out
+}
+
+.user__image:hover {
+    transform: scale(1.02)
+}
+
+.user__image_small {
+    width: 50px;
+    height: 50px;
+    min-width: 50px
+}
+
+.user__info {
+    row-gap: 10px;
+    height: 100px
+}
+
+.user__name {
+    font-family: 'Rubik', serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal;
+    color: #000;
+    width: 210px
+}
+
+.user__email {
+    font-family: 'Rubik', serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    color: #5F5F5F
+}
+
+.user__birth {
+    font-family: 'Rubik', serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    color: #000
+}
+
+.user__admin-info {
+    row-gap: 10px;
+    height: 100px
+}
+
+.user__admin-info-wrap {
+    row-gap: 8px
+}
+
+.user__admin-info_header {
+    font-family: 'Rubik', serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    color: #000
+}
+
+.user__admin-info_value {
+    font-family: 'Rubik', serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    color: #5F5F5F
+}
+
+.user__buttons {
+    height: 40px;
+    column-gap: 16px;
+    padding: 5px 0;
+    box-sizing: border-box;
+    top: 10px;
+    right: 12px
+}
+
+.user__buttons .user__button {
+    height: 32px;
+    width: 32px;
+    border-radius: 10px;
+    border: 0;
+    background-color: #D4F5F8
+}
+
+.user__buttons .user__button:hover {
+    opacity: .7;
+    cursor: pointer;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.25)
+}
+
+.news-container {
+    max-width: 650px;
+    list-style: none
+}
+
+.post {
+    background-color: #FFF;
+    border-radius: 15px;
+    box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.25);
+    padding: 0 25px 30px;
+    box-sizing: border-box;
+}
+
+.post__header {
+    height: 60px
+}
+
+.post__author {
+    font-family: 'Rubik', serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    color: #000
+}
+
+.post__date {
+    font-family: 'Rubik', serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    color: #5F5F5F
+}
+
+.post__content {
+    font-family: 'Rubik', serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    color: #000;
+    line-height: 1.5;
+    letter-spacing: normal
+}

@@ -1,0 +1,25 @@
+-function prettyDate(dateString) {
+    -const date = new Date(dateString);
+    -const d = date.getDate();
+    -const m = date.getMonth() + 1;
+    -const y = date.getFullYear();
+    -return (d <= 9 ? '0' + d : d) + '.' + (m <= 9 ? '0' + m : m) + '.' + y;
+-}
+
+li.user.position-relative.d-flex.align-items-center(id=`user-${user.id}`)
+    img.user__image.rounded-circle(src=`/images/${user.image}` alt=`Фотография ${user.name}` id=`user-image-${user.id}`)
+    section.user__info.d-flex.flex-column(id=`user-info-${user.id}`)
+        h3.user__name.m-0=user.name
+        p.user__email.m-0=user.email
+        p.user__birth.m-0=prettyDate(user.birth)
+    section.user__admin-info.d-flex.flex-column(id=`user-admin-info-${user.id}`)
+        .user__admin-info-wrap.d-flex.flex-column.gap-2
+            h4.user__role.user__admin-info_header.m-0 Роль:
+            p.user__role-value.user__admin-info_value.m-0=user.role
+        .user__admin-info-wrap.d-flex.flex-column.gap-2
+            h4.user__status.user__admin-info_header.m-0 Статус:
+            p.user__status-value.user__admin-info_value.m-0=user.status
+    section.user__buttons.position-absolute.d-flex.align-items-center
+        button.fa-regular.fa-user-group.user__button.user__friends-button(data-id=user.id title='Друзья')
+        button.fa-regular.fa-newspaper.user__button.user__news-button(data-id=user.id title='Новости')
+        button.fa-regular.fa-pen.user__button(data-bs-toggle='modal' data-bs-target='#edit-modal' data-bs-user=user title='Редактировать')

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris Game by DL</title>
+    <meta name="description" content="Игра Тетрис для Лабораторной работы №1 по Web-технологиям">
+    <meta name="keywords" content="Игра, Тетрис, ЛЭТИ, Web-технологии">
+    <meta name="author" content="Даниил Локосов">
+    <link rel="icon" type="image/x-icon" href="images/tetris.ico">
+    <link rel="stylesheet" href="styles/game.css">
+</head>
+<body>
+<header>
+    <h1>Игра Tetris</h1>
+</header>
+<main>
+    <section class="info">
+        <h3 id="username">Игрок: undefined</h3>
+        <h3 id="level">Текущий уровень: undefined</h3>
+        <h3 id="score">Счёт: undefined</h3>
+        <p>Следующая фигура</p>
+        <canvas width="128" height="128" class="figure-field" id="next-figure"></canvas>
+        <ul>
+            <li>Клавиши для управления:</li>
+            <li>Стрелка влево - перемещение фигуры влево</li>
+            <li>Стрелка право - перемещение фигуры вправо</li>
+            <li>Пробел / стрелка вниз - "уронить" фигуру</li>
+            <li>Стрелка вверх - повернуть фигуру</li>
+        </ul>
+    </section>
+    <section class="game">
+        <canvas width="320" height="640" class="game-field" id="game-field"></canvas>
+    </section>
+    <section class="leaderboard">
+        <div>
+            <h2>Таблица Лидеров</h2>
+            <p id="leaderboard">undefined</p>
+        </div>
+        <a href="./login.html" id="login">В главное меню</a>
+    </section>
+</main>
+<script type="module" src="scripts/game.js"></script>
+</body>
+</html>

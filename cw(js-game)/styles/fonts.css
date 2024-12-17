@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Dalelands';
+    src: url('../assets/fonts/Dalelands/DalelandsUncial.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dalelands';
+    src: url('../assets/fonts/Dalelands/DalelandsUncial-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dalelands';
+    src: url('../assets/fonts/Dalelands/DalelandsUncial-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dalelands';
+    src: url('../assets/fonts/Dalelands/DalelandsUncial-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dalelands Condensed';
+    src: url('../assets/fonts/Dalelands/DalelandsUncialCondensed-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dalelands Condensed';
+    src: url('../assets/fonts/Dalelands/DalelandsUncialCondensed-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dalelands Condensed';
+    src: url('../assets/fonts/Dalelands/DalelandsUncialCondensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dalelands Condensed';
+    src: url('../assets/fonts/Dalelands/DalelandsUncialCondensed-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}

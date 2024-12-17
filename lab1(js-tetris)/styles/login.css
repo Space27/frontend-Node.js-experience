@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.form {
+    font-family: 'Press Start 2P', Georgia, cursive;
+    line-height: 25px;
+    color: khaki;
+    background-color: darksalmon;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 50px 50px 0;
+    text-align: center;
+}
+

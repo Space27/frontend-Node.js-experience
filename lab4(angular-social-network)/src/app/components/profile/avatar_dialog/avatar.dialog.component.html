@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Загрузить фотографию</h2>
+<input type="file" hidden="hidden" (change)="onFileSelected($event)" #fileUpload accept="image/*">
+<div style="margin-left: 25px">
+  {{ fileName || "Файл не загружен" }}
+  <button mat-icon-button color='primary' (click)="fileUpload.click()">
+    <mat-icon>attach_file</mat-icon>
+  </button>
+</div>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close (click)="deleteImage()">Удалить</button>
+  <button mat-flat-button mat-dialog-close (click)="postImage()">Изменить</button>
+</mat-dialog-actions>

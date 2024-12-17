@@ -1,0 +1,28 @@
+<header-component subtitle="ПРОФИЛЬ - {{user.name}}" [link]="'/user/' + user.id"></header-component>
+<main class="main">
+  <mat-card class="profile-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>{{ user.name }}</mat-card-title>
+      <mat-card-subtitle>{{ prettyDate(user.birth) }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image
+         [src]="user.image ? 'https://localhost:443/images/' + user.image : 'assets/images/default_image.jpg'"
+         [alt]="'Фотография пользователя ' + user.name" class="profile-card__image user__image"
+         (click)="openDialog()">
+    <mat-card-actions>
+      <button [routerLink]="['/user/' + user.id + '/friends/news']" mat-button>ЛЕНТА</button>
+      <button mat-button [matMenuTriggerFor]="menu">ДРУЗЬЯ</button>
+      <mat-menu #menu="matMenu" yPosition="below">
+        <menu mat-menu-item *ngFor="let relUser of users">
+          <mat-icon *ngIf="!relUser.isFriend" (click)="addFriend(relUser.user.id)">add</mat-icon>
+          <mat-icon *ngIf="relUser.isFriend" (click)="removeFriend(relUser.user.id)">remove</mat-icon>
+          <img class="menu__image"
+               [src]="relUser.user.image ? 'https://localhost:443/images/' + relUser.user.image : 'assets/images/default_image.jpg'">
+          <span class="menu__text">{{ relUser.user.name }}</span>
+        </menu>
+      </mat-menu>
+      <a *ngIf="user.role === 'Администратор'" mat-button href="https://localhost:443/users">АДМИНИСТРАТОР</a>
+    </mat-card-actions>
+  </mat-card>
+  <user-news></user-news>
+</main>

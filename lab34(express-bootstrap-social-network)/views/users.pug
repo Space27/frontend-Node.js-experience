@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    include header.pug
+    main.main.pt-5
+        ul.user-container.p-0.d-grid.gap-4.mx-auto.mt-0.mb-4
+            each user in users
+                include user.pug
+            #edit-modal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='modal-form-label' aria-hidden='true')
+                .modal-dialog.modal-dialog-centered(role='document')
+                    form#edit-dialog-form.modal-content(method='dialog' enctype='multipart/form-data')
+                        .modal-header
+                            h5#modal-form-label.modal-title Редактирование
+                        .modal-body
+                            input#form-id(type='hidden' name='id')
+                            .mb-2
+                                label(for='form-image') Загрузите фотографию
+                                input#form-image.form-control(type='file' name='image' accept='image/*')
+                            .mb-2
+                                label(for='form-name') Имя
+                                input#form-name.form-control(type='text'  name='name' placeholder='Введите имя')
+                            .mb-2
+                                label(for='form-email') Email адрес
+                                input#form-email.form-control(type='email' name='email' placeholder='Введите email')
+                            .mb-2
+                                label(for='form-birth') Дата рождения
+                                input#form-birth.form-control(type='date' name='birth' placeholder='Введите дату рождения')
+                            .mb-2
+                                label(for='form-role') Роль пользователя
+                                select#form-role.form-select(name='role')
+                                    option(value='Администратор') Администратор
+                                    option(value='Пользователь') Пользователь
+                            .mb-2
+                                label(for='form-status') Статус пользователя
+                                select#form-status.form-select(name='status')
+                                    option(value='Активный') Активный
+                                    option(value='Не подтвержден') Не подтвержден
+                                    option(value='Заблокирован') Заблокирован
+                        .modal-footer
+                            button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Закрыть
+                            button.btn.btn-primary(type='submit' data-bs-dismiss='modal') Сохранить изменения
+
+    script(src='/webpack/javascripts/users.js')

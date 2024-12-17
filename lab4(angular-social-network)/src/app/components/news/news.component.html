@@ -1,0 +1,16 @@
+<header-component subtitle="ЛЕНТА - {{user.name}}" [link]="'/user/' + user.id"></header-component>
+<main class="main">
+  <section class="news-container">
+    <mat-card *ngFor="let post of news" class="post" appearance="outlined">
+      <mat-card-header>
+        <div mat-card-avatar class="post__image user__image"
+             [style.background-image]="post.author.image ? 'url(https://localhost:443/images/' + post.author.image + ')' : 'url(assets/images/default_image.jpg)'"></div>
+        <mat-card-title>{{ post.author.name }}</mat-card-title>
+        <mat-card-subtitle>{{ prettyDate(post.content.date) }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        {{ post.content.text }}
+      </mat-card-content>
+    </mat-card>
+  </section>
+</main>

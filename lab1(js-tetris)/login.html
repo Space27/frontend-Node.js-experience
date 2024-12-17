@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris Game by DL - Login</title>
+    <meta name="description" content="Игра Тетрис для Лабораторной работы №1 по Web-технологиям">
+    <meta name="keywords" content="Игра, Тетрис, ЛЭТИ, Web-технологии">
+    <meta name="author" content="Даниил Локосов">
+    <link rel="icon" type="image/x-icon" href="images/tetris.ico">
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+<section class="form">
+    <h1>Игра Тетрис</h1>
+    <form action="game.html" method="get">
+        <label for="username">Введите имя:</label><br>
+        <input type="text" name="username" id="username" placeholder="Имя пользователя" required><br>
+        <input type="submit" value="Ввод" id="submit" onclick="store()">
+    </form>
+</section>
+<script src="scripts/login.js"></script>
+</body>
+</html>

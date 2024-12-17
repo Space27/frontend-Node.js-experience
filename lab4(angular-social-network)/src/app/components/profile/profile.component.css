@@ -1,0 +1,25 @@
+.main {
+  display: flex;
+  align-items: flex-start;
+}
+
+.profile-card {
+  width: 350px;
+  box-sizing: border-box;
+}
+
+.profile-card__image {
+  width: 300px;
+  height: 300px;
+  border-radius: 30px;
+  margin: 15px auto;
+  object-fit: cover;
+}
+
+.menu__image {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 100%;
+  margin-top: 5px;
+}

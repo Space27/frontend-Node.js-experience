@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Rubik';
+  src: url('../public/assets/fonts/Rubik/Rubik-VariableFont_wght.ttf') format('truetype');
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('../public/assets/fonts/Rubik/Rubik-Italic-VariableFont_wght.ttf') format('truetype');
+  font-style: italic
+}
+
+a {
+  text-decoration: none
+}
+
+.page * {
+  font-family: 'Rubik', serif !important;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+.material-icons {
+  font-family: 'Material Icons', serif !important;
+}
+
+.page {
+  margin: 0;
+  background-color: rgba(212, 245, 248, 0.3);
+}
+
+html, body {
+  height: 100%;
+}
+
+.main {
+  margin: 0 auto;
+  padding: 30px 30px 0;
+}
+
+mat-card-subtitle {
+  color: #5F5F5F !important;
+  font-weight: normal !important;
+}
+
+.user__image {
+  transition: transform .2s ease-out;
+}
+
+.user__image:hover {
+  transform: scale(1.02);
+}

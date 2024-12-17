@@ -1,0 +1,1 @@
+$("#sign-form").on("submit",function(t){var o=new FormData($(this)[0]);$.ajax({url:"https://localhost:443/",data:o,processData:!1,contentType:!1,type:"POST",success:function(t){window.location.href="https://localhost:443/users"}})});

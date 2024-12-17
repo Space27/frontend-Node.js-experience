@@ -1,0 +1,20 @@
+<form class="add-post-form">
+  <mat-form-field class="add-post-form__field" appearance="fill">
+    <mat-label>Что у вас нового?</mat-label>
+    <textarea matInput class="add-post-form__input" [formControl]="post"></textarea>
+    <button type="button" mat-icon-button matSuffix (click)="addPost()" title="Отправить">
+      <mat-icon>send</mat-icon>
+    </button>
+  </mat-form-field>
+</form>
+<mat-card *ngFor="let post of news" class="post" appearance="outlined">
+  <mat-card-header>
+    <div mat-card-avatar class="post__image user__image"
+         [style.background-image]="user.image ? 'url(https://localhost:443/images/' + user.image + ')' : 'url(assets/images/default_image.jpg)'"></div>
+    <mat-card-title>{{ user.name }}</mat-card-title>
+    <mat-card-subtitle>{{ prettyDate(post.date) }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    {{ post.text }}
+  </mat-card-content>
+</mat-card>

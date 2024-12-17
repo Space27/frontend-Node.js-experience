@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    include header.pug
+    main.main.pt-5
+        ul.news-container.p-0.d-grid.gap-4.mx-auto.mt-0.mb-4
+            each post in news
+                li.post
+                    section.post__header.d-flex.align-items-center.gap-4
+                        img.user__image.rounded-circle.user__image_small(src=`/images/${post.author.image}` alt=`Фотография ${post.author.name}`)
+                        .post__info.d-grid.gap-2
+                            h3.post__author.m-0=post.author.name
+                            p.post__date.m-0=prettyDate(post.content.date)
+                    p.post__content.mb-0.mt-2=post.content.text

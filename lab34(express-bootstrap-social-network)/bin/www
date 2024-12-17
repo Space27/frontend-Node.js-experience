@@ -1,0 +1,72 @@
+#!/usr/bin/env node
+
+//Module dependencies.
+const app = require('../app');
+const fs = require('fs');
+const path = require('path');
+const debug = require('debug')('lab3-web:server');
+const https = require('https');
+const {Server} = require('socket.io');
+
+
+//ssl keys.
+const privateKey = fs.readFileSync(path.join(__dirname, '/ssl/server.key'), 'utf8');
+const certificate = fs.readFileSync(path.join(__dirname, '/ssl/server.csr'), 'utf8');
+
+//Define HTTPs server port
+const port = 443;
+app.set('port', port);
+
+//Create HTTPs server.
+const server = https.createServer({key: privateKey, cert: certificate}, app);
+const io = new Server(server, {
+    cors: {
+        origin: true,
+        credentials: true,
+        methods: ["GET", "POST"]
+    }
+});
+io.on('connection', (socket) => {
+    socket.on('new_post', () => {
+        socket.broadcast.emit('update');
+    });
+});
+
+//Listen on provided port, on all network interfaces.
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+//Event listener for HTTPs server "error" event.
+function onError(error) {
+    if (error.syscall !== 'listen') {
+        throw error;
+    }
+
+    const bind = typeof port === 'string'
+        ? 'Pipe ' + port
+        : 'Port ' + port;
+
+    // handle specific listen errors with friendly messages
+    switch (error.code) {
+        case 'EACCES':
+            console.error(bind + ' requires elevated privileges');
+            process.exit(1);
+            break;
+        case 'EADDRINUSE':
+            console.error(bind + ' is already in use');
+            process.exit(1);
+            break;
+        default:
+            throw error;
+    }
+}
+
+//Event listener for HTTPs server "listening" event.
+function onListening() {
+    const addr = server.address();
+    const bind = typeof addr === 'string'
+        ? 'pipe ' + addr
+        : 'port ' + addr.port;
+    debug('Listening on ' + bind);
+}
